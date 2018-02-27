@@ -8,22 +8,25 @@ import { NgModel } from '@angular/forms';
 })
 export class AppComponent {
 
-  username:String         = 'Eugene Kirillov';
-  isUsernameEmpty:boolean = false;
-  message:string = '';
+  message:string = ' Eugene is awsome ngler !!!';
+  toggle:boolean = false;
+  log = [  ];
 
-  resetUsername () {
-     this.username = '';
-     this.message = 'Username is reset !!! ';
-     this.isUsernameEmpty = true;
+  onLogDetails () {
+     this.toggle = !this.toggle;   
+     this.log.push(this.message);
+     console.log( 'clicked !!! ')
   }
 
-  onUpdateUsername () {
-    if ( !this.username || this.username.length === 0 ){
-       this.isUsernameEmpty = true;
-    }else{
-      this.isUsernameEmpty = false; 
-      this.message = '';
-    }
+  getFgColor (){
+    console.log( 'getColor called !!! ')
+    return 'white';
   }
+  
+
+  getBgColor (){
+    console.log( 'getColor called !!! ')
+    return 'blue';
+  }
+  
 }
